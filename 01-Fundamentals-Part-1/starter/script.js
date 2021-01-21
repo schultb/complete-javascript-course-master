@@ -43,4 +43,37 @@ if (markHigherBMI) {
 } else {
     console.log(`John's BMI, ${bmiJohn}, is higher than Mark's, ${bmiMark}.`)
 };
+//////////////////////////////////////////////////////////////////////////////////////////////
 
+// Coding Challenge #3
+
+const dolphins1 = 7;
+const dolphins2 = 112;
+const dolphins3 = 101;
+
+const koalas1 = 109;
+const koalas2 = 95;
+const koalas3 = 6;
+
+const averageDolphins = ((dolphins1 + dolphins2 + dolphins3) / 3);
+const averageKoalas = ((koalas1 + koalas2 + koalas3) / 3);
+
+console.log(averageDolphins, averageKoalas);
+
+/* if (averageDolphins > averageKoalas) {
+  console.log("Dolphins win!");
+} else if (averageDolphins === averageKoalas) {
+  console.log("It's a tie!");
+} else {
+  console.log("Koalas win!");
+} */
+
+if ((averageDolphins >= 100) && (averageDolphins > averageKoalas)) {
+    console.log("Dolphins win!");
+} else if (averageDolphins === averageKoalas) {
+    console.log("It's a tie!");
+} else if ((averageKoalas >= 100) && (averageKoalas > averageDolphins)) {
+    console.log("Koalas win!");
+} else {
+    console.log("No one wins! Draw!");
+}
