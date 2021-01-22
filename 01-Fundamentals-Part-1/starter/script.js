@@ -77,3 +77,9 @@ if ((averageDolphins >= 100) && (averageDolphins > averageKoalas)) {
 } else {
     console.log("No one wins! Draw!");
 }
+
+const bill = 150;
+const tip1 = (bill * (15 / 100));
+const tip2 = (bill * (20 / 100));
+
+bill >= 50 && bill <= 300 ? console.log(`The bill is ${bill}, the tip is ${tip1}, and the total value is ${bill + tip1}`) : bill <= 49 ? console.log("No tip!") : console.log(`The bill is ${bill}, the tip is ${tip2}, and the total value is ${bill + tip2}`);
