@@ -19,7 +19,7 @@ const hey = function calcAge1(birthYear) {
 
 const ben = hey(1974);
 console.log(`Ben is ${sally} years old.`);
-
+// --------------------------------------------------------------------
 const calcAverage = (a, b, c) => (a + b + c) / 3;
 
 /* const hello = function(a, b, c) {
