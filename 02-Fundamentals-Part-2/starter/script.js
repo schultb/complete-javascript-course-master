@@ -51,3 +51,33 @@ scoreDolphins = calcAverage(85, 54, 41);
 scoreKoalas = calcAverage(23, 34, 27);
 console.log(scoreDolphins, scoreKoalas);
 console.log(checkWinner(scoreDolphins, scoreKoalas));
+
+// ____________________________________________________________________________
+
+// const bill = [125, 555, 44];
+
+// const calcTip = function (bill) {
+//     if (bill >= 50 && bill <= 300) {
+//         return bill * 0.15;
+//     } else {
+//         return bill * 0.2;
+//     }
+
+// }
+
+// const yikes1 = [calcTip(bill[0]), calcTip(bill[1]), calcTip(bill[2])];
+
+// console.log(bill, yikes1);
+
+// ______________________________________________________________________________________
+
+
+const calcTip = function (bill) {
+    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+}
+
+const bills = [125, 555, 44];
+const tip = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+const totals = [bills[0] + tip[0], bills[1] + tip[1], bills[2] + tip[2]];
+
+console.log(bills, tip, totals);
