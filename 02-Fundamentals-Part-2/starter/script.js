@@ -103,7 +103,7 @@ const john = {
     mass: 92,
     height: 1.95,
     calcBMI: function () {
-        this.body = this.mass / (this.height * this.height);
+        this.body = this.mass / (this.height ** 2);
         return this.body;
     }
 };
