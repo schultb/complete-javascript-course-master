@@ -109,9 +109,9 @@ const john = {
 };
 
 
-console.log(mark.calcBMI());
+mark.calcBMI();
 console.log(mark.body);
-console.log(john.calcBMI());
+john.calcBMI();
 console.log(john.body);
 
 const higher = function () {
