@@ -64,6 +64,13 @@ const {
 } = openingHours;
 console.log(open, close);
 
+const arr = [7, 8, 9];
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+
+const newMenu = [...restaurant.mainMenu, 'Gnocchi'];
+console.log(newMenu);
+
 /* const [first, second, third] = restaurant.categories;
 console.log(first, second, third); */
 
