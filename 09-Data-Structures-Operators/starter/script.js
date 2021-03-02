@@ -17,7 +17,7 @@ const restaurant = {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
-  /* openingHours: {
+  openingHours: {
     thu: {
       open: 12,
       close: 22,
@@ -30,17 +30,39 @@ const restaurant = {
       open: 0, // Open 24 hours
       close: 24,
     },
-  }, */
+  },
 };
 
-// *********************************************************************
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
 
-/* const arr = [2, 3, 4];
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
 
-const [x, y, z] = arr;
+/* Default values */
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
 
-console.log(x, y, z); */
-// *******************************************************************
+/* Mutating variables */
+let a = 111;
+let b = 999;
+const obj = {
+  a: 23,
+  b: 7,
+  c: 14,
+};
+({ a, b } = obj);
+console.log(a, b);
+
+/* Nested Object */
+const {
+  fri: { open, close },
+} = openingHours;
+console.log(open, close);
 
 /* const [first, second, third] = restaurant.categories;
 console.log(first, second, third); */
