@@ -1,3 +1,9 @@
+/* const arr = [2, 3, 4];
+
+const [x, y, z] = arr;
+
+console.log(x, y, z); */
+
 'use strict';
 
 const restaurant = {
@@ -6,6 +12,10 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
 
   openingHours: {
     thu: {
@@ -22,35 +32,3 @@ const restaurant = {
     },
   },
 };
-
-// Sets
-const ordersSet = new Set([
-  'Pasta',
-  'Pizza',
-  'Pizza',
-  'Risotto',
-  'Pasta',
-  'Pizza',
-]);
-
-console.log(ordersSet);
-console.log(new Set('Schultze'));
-console.log(ordersSet.size);
-console.log(ordersSet.has('Pizza'));
-ordersSet.add('Garlic Bread');
-ordersSet.add('Garlic Bread');
-console.log(ordersSet);
-ordersSet.delete('Risotto');
-// ordersSet.clear();
-console.log(ordersSet);
-
-for (const order of ordersSet) console.log(order);
-
-// Example of Sets
-const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
-const staffUnique = [...new Set(staff)];
-console.log(staffUnique);
-console.log(
-  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
-);
-console.log(new Set('Schultze').size);
