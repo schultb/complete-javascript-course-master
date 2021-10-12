@@ -108,7 +108,7 @@ console.log(question);
 // console.log(Object.entries(openingHours));
 // const hoursMap = new Map(Object.entries(openingHours));
 
-// Iterationjava
+// Iteration
 console.log(question.get('question'));
 for (const [key, value] of question) {
   if (typeof key === 'number') console.log`An1swer ${key}: ${value}`;
