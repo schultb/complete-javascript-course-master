@@ -152,4 +152,19 @@ const gameEvents = new Map([
   [92, '🔶 Yellow card'],
 ]);
 
-/*
+// 1. Create a set to eliminate repeated values and put in array
+console.log(gameEvents.values());
+
+const events = [...new Set(gameEvents.values())];
+console.log(events);
+
+// 2. Remove 64, yellow card
+gameEvents.delete(64);
+console.log(gameEvents);
+
+// 3. Add string to console
+console.log(
+  `An event happened, on average, every ${90 / gameEvents.size} minutes`
+);
+
+// 4. Loop events
