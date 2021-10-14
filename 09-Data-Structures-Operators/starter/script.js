@@ -125,3 +125,4 @@ console.log([...question]);
 console.log(question.entries());
 console.log([...question.keys()]);
 console.log([...question.values()]);
+// skdlsdldslsdjlsdjlksd
