@@ -111,7 +111,7 @@ console.log(question);
 // Iterationjava
 console.log(question.get('question'));
 for (const [key, value] of question) {
-  if (typeof key === 'number') console.log`An1swer ${key}: ${value}`;
+  if (typeof key === 'number') console.log`Answer ${key}: ${value}`;
 }
 
 // const answer = Number(prompt('Your answer'));
