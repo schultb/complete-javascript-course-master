@@ -167,4 +167,8 @@ console.log(
   `An event happened, on average, every ${90 / gameEvents.size} minutes`
 );
 
-// 4. Loop events
+// 4. Loop events of map
+for (const [key, value] of gameEvents) {
+  const half = key <= 45 ? 'FIRST' : 'SECOND';
+  console.log(`${half} [half] ${key}: ${value}`);
+}
