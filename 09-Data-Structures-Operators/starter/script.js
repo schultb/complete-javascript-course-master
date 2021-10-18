@@ -172,3 +172,46 @@ for (const [key, value] of gameEvents) {
   const half = key <= 45 ? 'FIRST' : 'SECOND';
   console.log(`${half} [half] ${key}: ${value}`);
 }
+
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+// Tells position of letter or number at positon 0
+console.log(plane[0]);
+
+// Length of string
+console.log(airline.length);
+
+// indexOf gives position of specific element in variable---position of r
+console.log(airline.indexOf('r'));
+
+// lastIndexOf gives last position of named element---where the last r occurs
+console.log(airline.lastIndexOf('r'));
+
+// where the word occurs---its numeral position. This is case-sensitive.
+console.log(airline.indexOf('Portugal'));
+
+// Slice removex first 4 elements in string
+console.log(airline.slice(4));
+
+// This removes first four and final seven of elements
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+console.log(airline.slice(-2));
+
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log('You got the middle seat');
+  else console.log('You got lucky');
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
