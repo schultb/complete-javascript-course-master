@@ -173,6 +173,8 @@ for (const [key, value] of gameEvents) {
   console.log(`${half} [half] ${key}: ${value}`);
 }
 
+// //////////////////////////////////////////////////////////////////////////////
+
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
 
