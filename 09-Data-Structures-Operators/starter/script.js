@@ -138,82 +138,151 @@ Let's continue with our football betting app! This time, we have a map with a lo
 GOOD LUCK 😀
 */
 
-const gameEvents = new Map([
-  [17, '⚽️ GOAL'],
-  [36, '🔁 Substitution'],
-  [47, '⚽️ GOAL'],
-  [61, '🔁 Substitution'],
-  [64, '🔶 Yellow card'],
-  [69, '🔴 Red card'],
-  [70, '🔁 Substitution'],
-  [72, '🔁 Substitution'],
-  [76, '⚽️ GOAL'],
-  [80, '⚽️ GOAL'],
-  [92, '🔶 Yellow card'],
-]);
+// const gameEvents = new Map([
+//   [17, '⚽️ GOAL'],
+//   [36, '🔁 Substitution'],
+//   [47, '⚽️ GOAL'],
+//   [61, '🔁 Substitution'],
+//   [64, '🔶 Yellow card'],
+//   [69, '🔴 Red card'],
+//   [70, '🔁 Substitution'],
+//   [72, '🔁 Substitution'],
+//   [76, '⚽️ GOAL'],
+//   [80, '⚽️ GOAL'],
+//   [92, '🔶 Yellow card'],
+// ]);
 
-// 1. Create a set to eliminate repeated values and put in array
-console.log(gameEvents.values());
+// // 1. Create a set to eliminate repeated values and put in array
+// console.log(gameEvents.values());
 
-const events = [...new Set(gameEvents.values())];
-console.log(events);
+// const events = [...new Set(gameEvents.values())];
+// console.log(events);
 
-// 2. Remove 64, yellow card
-gameEvents.delete(64);
-console.log(gameEvents);
+// // 2. Remove 64, yellow card
+// gameEvents.delete(64);
+// console.log(gameEvents);
 
-// 3. Add string to console
-console.log(
-  `An event happened, on average, every ${90 / gameEvents.size} minutes`
-);
+// // 3. Add string to console
+// console.log(
+//   `An event happened, on average, every ${90 / gameEvents.size} minutes`
+// );
 
-// 4. Loop events of map
-for (const [key, value] of gameEvents) {
-  const half = key <= 45 ? 'FIRST' : 'SECOND';
-  console.log(`${half} [half] ${key}: ${value}`);
-}
+// // 4. Loop events of map
+// for (const [key, value] of gameEvents) {
+//   const half = key <= 45 ? 'FIRST' : 'SECOND';
+//   console.log(`${half} [half] ${key}: ${value}`);
+// }
 
 // //////////////////////////////////////////////////////////////////////////////
+// Working with Strings ---- Part 1
+
+// const airline = 'TAP Air Portugal';
+// const plane = 'A320';
+
+// // Tells position of letter or number at positon 0
+// console.log(plane[0]);
+
+// // Length of string
+// console.log(airline.length);
+
+// // indexOf gives position of specific element in variable---position of r
+// console.log(airline.indexOf('r'));
+
+// // lastIndexOf gives last position of named element---where the last r occurs
+// console.log(airline.lastIndexOf('r'));
+
+// // where the word occurs---its numeral position. This is case-sensitive.
+// console.log(airline.indexOf('Portugal'));
+
+// // Slice removex first 4 elements in string
+// console.log(airline.slice(4));
+
+// // This removes first four and final seven of elements
+// console.log(airline.slice(4, 7));
+
+// console.log(airline.slice(0, airline.indexOf(' ')));
+
+// console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+// console.log(airline.slice(-2));
+
+// console.log(airline.slice(1, -1));
+
+// const checkMiddleSeat = function (seat) {
+//   // B and E are middle seats
+//   const s = seat.slice(-1);
+//   if (s === 'B' || s === 'E') console.log('You got the middle seat');
+//   else console.log('You got lucky');
+// };
+
+// checkMiddleSeat('11B');
+// checkMiddleSeat('23C');
+// checkMiddleSeat('3E');
+
+// //////////////////////////////////////////////////////////////////////////////
+// Working with Strings ---- Part 2
 
 const airline = 'TAP Air Portugal';
-const plane = 'A320';
 
-// Tells position of letter or number at positon 0
-console.log(plane[0]);
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
 
-// Length of string
-console.log(airline.length);
+// Fix capitalization in name
+const passenger = 'jOnAS';
 
-// indexOf gives position of specific element in variable---position of r
-console.log(airline.indexOf('r'));
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
 
-// lastIndexOf gives last position of named element---where the last r occurs
-console.log(airline.lastIndexOf('r'));
+// Comparing emails
+const email = 'hello@jonas.com';
+const loginEmail = '  Hello@Jonas.Com \n';
 
-// where the word occurs---its numeral position. This is case-sensitive.
-console.log(airline.indexOf('Portugal'));
+const lowerEmail = loginEmail.toLowerCase();
+const trimmedEmail = lowerEmail.trim();
+console.log(trimmedEmail);
 
-// Slice removex first 4 elements in string
-console.log(airline.slice(4));
+// Instead of two steps, complete it in one step
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
 
-// This removes first four and final seven of elements
-console.log(airline.slice(4, 7));
+console.log(email === normalizedEmail);
 
-console.log(airline.slice(0, airline.indexOf(' ')));
+// replacing
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS);
 
-console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+const announcement =
+  'All passengers come to boarding door 23. Boarding door 23!';
 
-console.log(airline.slice(-2));
+// Replace All replaces all occurences. If you use Replace, then only the first occurence is replaced
+console.log(announcement.replaceAll('door', 'gate'));
 
-console.log(airline.slice(1, -1));
+//Using regular expression if replaceAll doesn't work. Regular expression uses / instead of '. You place a g after. G stands for global.
+console.log(announcement.replace(/door/g, 'gate'));
 
-const checkMiddleSeat = function (seat) {
-  // B and E are middle seats
-  const s = seat.slice(-1);
-  if (s === 'B' || s === 'E') console.log('You got the middle seat');
-  else console.log('You got lucky');
+// Booleans
+const plane = 'Airbus A320neo';
+console.log(plane.includes('A320'));
+console.log(plane.includes('Boeing'));
+console.log(plane.startsWith('Air'));
+
+if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+  console.log('Part of the NEW Airbus family');
+}
+
+// Practice exercise
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are NOT allowed on board.');
+  } else {
+    console.log('Welcome aboard');
+  }
 };
 
-checkMiddleSeat('11B');
-checkMiddleSeat('23C');
-checkMiddleSeat('3E');
+checkBaggage('I have a laptop, and some Food, and a pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('I have snacks and a gun for protection');
