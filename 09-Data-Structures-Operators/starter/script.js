@@ -222,67 +222,124 @@ GOOD LUCK 😀
 // //////////////////////////////////////////////////////////////////////////////
 // Working with Strings ---- Part 2
 
-const airline = 'TAP Air Portugal';
+// const airline = 'TAP Air Portugal';
 
-console.log(airline.toLowerCase());
-console.log(airline.toUpperCase());
+// console.log(airline.toLowerCase());
+// console.log(airline.toUpperCase());
 
-// Fix capitalization in name
-const passenger = 'jOnAS';
+// // Fix capitalization in name
+// const passenger = 'jOnAS';
 
-const passengerLower = passenger.toLowerCase();
-const passengerCorrect =
-  passengerLower[0].toUpperCase() + passengerLower.slice(1);
-console.log(passengerCorrect);
+// const passengerLower = passenger.toLowerCase();
+// const passengerCorrect =
+//   passengerLower[0].toUpperCase() + passengerLower.slice(1);
+// console.log(passengerCorrect);
 
-// Comparing emails
-const email = 'hello@jonas.com';
-const loginEmail = '  Hello@Jonas.Com \n';
+// // Comparing emails
+// const email = 'hello@jonas.com';
+// const loginEmail = '  Hello@Jonas.Com \n';
 
-const lowerEmail = loginEmail.toLowerCase();
-const trimmedEmail = lowerEmail.trim();
-console.log(trimmedEmail);
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+// console.log(trimmedEmail);
 
-// Instead of two steps, complete it in one step
-const normalizedEmail = loginEmail.toLowerCase().trim();
-console.log(normalizedEmail);
+// // Instead of two steps, complete it in one step
+// const normalizedEmail = loginEmail.toLowerCase().trim();
+// console.log(normalizedEmail);
 
-console.log(email === normalizedEmail);
+// console.log(email === normalizedEmail);
 
-// replacing
-const priceGB = '288,97£';
-const priceUS = priceGB.replace('£', '$').replace(',', '.');
-console.log(priceUS);
+// // replacing
+// const priceGB = '288,97£';
+// const priceUS = priceGB.replace('£', '$').replace(',', '.');
+// console.log(priceUS);
 
-const announcement =
-  'All passengers come to boarding door 23. Boarding door 23!';
+// const announcement =
+//   'All passengers come to boarding door 23. Boarding door 23!';
 
-// Replace All replaces all occurences. If you use Replace, then only the first occurence is replaced
-console.log(announcement.replaceAll('door', 'gate'));
+// // Replace All replaces all occurences. If you use Replace, then only the first occurence is replaced
+// console.log(announcement.replaceAll('door', 'gate'));
 
-//Using regular expression if replaceAll doesn't work. Regular expression uses / instead of '. You place a g after. G stands for global.
-console.log(announcement.replace(/door/g, 'gate'));
+// //Using regular expression if replaceAll doesn't work. Regular expression uses / instead of '. You place a g after. G stands for global.
+// console.log(announcement.replace(/door/g, 'gate'));
 
-// Booleans
-const plane = 'Airbus A320neo';
-console.log(plane.includes('A320'));
-console.log(plane.includes('Boeing'));
-console.log(plane.startsWith('Air'));
+// // Booleans
+// const plane = 'Airbus A320neo';
+// console.log(plane.includes('A320'));
+// console.log(plane.includes('Boeing'));
+// console.log(plane.startsWith('Air'));
 
-if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
-  console.log('Part of the NEW Airbus family');
-}
+// if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+//   console.log('Part of the NEW Airbus family');
+// }
 
-// Practice exercise
-const checkBaggage = function (items) {
-  const baggage = items.toLowerCase();
-  if (baggage.includes('knife') || baggage.includes('gun')) {
-    console.log('You are NOT allowed on board.');
-  } else {
-    console.log('Welcome aboard');
+// // Practice exercise
+// const checkBaggage = function (items) {
+//   const baggage = items.toLowerCase();
+//   if (baggage.includes('knife') || baggage.includes('gun')) {
+//     console.log('You are NOT allowed on board.');
+//   } else {
+//     console.log('Welcome aboard');
+//   }
+// };
+
+// checkBaggage('I have a laptop, and some Food, and a pocket Knife');
+// checkBaggage('Socks and camera');
+// checkBaggage('I have snacks and a gun for protection');
+
+// //////////////////////////////////////////////////////////////////////////////
+// Working with Strings ---- Part 3
+
+// Split and Join --- Used all the time
+// Split breaks string elements into an array separated where the + sign appears
+console.log('a+very+nice+string'.split('+'));
+console.log('Benjamin Schultze'.split(' '));
+
+// Join brings elements together
+const [firstName, lastName] = 'Benjamin Schultze'.split(' ');
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+// Capitalize the first letter of each name
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+
+  for (const n of names) {
+    // One way of writing formula
+    // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+
+    // Second way of writing formula
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
   }
+  console.log(namesUpper.join(' '));
+};
+const passenger = 'jessica ann smith davis';
+
+capitalizeName('jessica ann smith davis');
+capitalizeName('benjamin schultze');
+
+// Padding a string
+const message = 'Go to gate 23!';
+console.log(message.padStart(20, '+').padEnd(30, '+'));
+console.log('Ben'.padStart(20, '+').padEnd(30, '+'));
+
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
 };
 
-checkBaggage('I have a laptop, and some Food, and a pocket Knife');
-checkBaggage('Socks and camera');
-checkBaggage('I have snacks and a gun for protection');
+console.log(maskCreditCard(4333656585894578));
+console.log(maskCreditCard('5699854478966558'));
+
+// Repeat
+const message2 = 'Bad weather... All departures delayed... ';
+console.log(message2.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'✈'.repeat(n)}`);
+};
+planesInLine(5);
+planesInLine(3);
+planesInLine(12);
