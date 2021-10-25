@@ -375,3 +375,31 @@ document.body.append(document.createElement('button'));
 document.querySelector('button').addEventListener('click', function () {
   const text = document.querySelector('textarea').value;
 });
+// const camelName = function (brand) {
+//   const cutName = brand.remove('_', '*');
+
+//   console.log(cutName);
+//   // const newThing = brand.join('*');
+
+//   // const newName = [];
+//   // for(const y of x) {
+//   //   newName.push(y.replace('_')+1.join)
+//   // }
+// };
+console.log('sally_field'.replace('_', '*'));
+
+// console.log('first_name'.split('_').join(' '));
+
+// const capitalizeName = function (name) {
+//   const names = name.split(' ');
+//   const namesUpper = [];
+
+//   for (const n of names) {
+//     namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+//   }
+//   console.log(namesUpper.join(' '));
+// };
+// const passenger = 'jessica ann smith davis';
+
+// capitalizeName('jessica ann smith davis');
+// capitalizeName('benjamin schultze');
