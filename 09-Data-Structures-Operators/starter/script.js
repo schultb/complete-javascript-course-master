@@ -376,16 +376,8 @@ document.querySelector('button').addEventListener('click', function () {
   const text = document.querySelector('textarea').value;
 });
 // const camelName = function (brand) {
-//   const cutName = brand.remove('_', '*');
+//   const cutName = brand.replace('_', '*');}
 
-//   console.log(cutName);
-//   // const newThing = brand.join('*');
-
-//   // const newName = [];
-//   // for(const y of x) {
-//   //   newName.push(y.replace('_')+1.join)
-//   // }
-// };
 console.log('sally_field'.replace('_', '*'));
 
 // console.log('first_name'.split('_').join(' '));
