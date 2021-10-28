@@ -374,24 +374,16 @@ document.body.append(document.createElement('textarea'));
 document.body.append(document.createElement('button'));
 document.querySelector('button').addEventListener('click', function () {
   const text = document.querySelector('textarea').value;
+  const rows = text.split('\n');
+  console.log(rows);
+
+  for (const [i, row] of rows.entries()) {
+    const [first, second] = row.toLowerCase().trim().split('_');
+
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
+  }
 });
-// const camelName = function (brand) {
-//   const cutName = brand.replace('_', '*');}
-
-console.log('sally_field'.replace('_', '*'));
-
-// console.log('first_name'.split('_').join(' '));
-
-// const capitalizeName = function (name) {
-//   const names = name.split(' ');
-//   const namesUpper = [];
-
-//   for (const n of names) {
-//     namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
-//   }
-//   console.log(namesUpper.join(' '));
-// };
-// const passenger = 'jessica ann smith davis';
-
-// capitalizeName('jessica ann smith davis');
-// capitalizeName('benjamin schultze');
